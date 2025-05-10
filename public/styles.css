@@ -1,0 +1,48 @@
+body {
+    background-color: #606C38;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #DDA15E;
+}
+
+
+h1 {
+    text-align: center;
+    color: #BC6C25
+}
+#recipes-and-inventory {
+    margin: auto;
+    display: flex;
+}
+
+#ingredient-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card-content {
+    background-color: #DDA15E;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    color: #BC6C25 
+}
+
+.hidden {
+    display: none;
+}
+
+/* 
+light green: 606C38
+dark green: 283618 
+light orange: DDA15E
+dark orange: BC6C25
+background / cream: FEFAE0
+*/

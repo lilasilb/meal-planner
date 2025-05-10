@@ -1,0 +1,17 @@
+[
+    {
+        "name": "banana",
+        "ingredients": [
+            "yellow",
+            "potassium",
+            "peel"
+        ]
+    },
+    {
+        "name": "sushi bowl",
+        "ingredients": [
+            "sushi",
+            "bowl"
+        ]
+    }
+]
