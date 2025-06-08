@@ -1,54 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal Planning</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-    </head>
-    <body>
-        <h1>Meal Planner</h1>
-        <p>
-            Welcome to the Meal Planner! Here you can add your favorite recipes, 
-            keep track of your ingredient inventory, and plan your meals for the week.
-        </p>
+</head>
 
-        <div id="recipes-and-inventory">
-            <div id="recipes">
-                <h2>Recipes</h2>
-                <p>Add and view your favorite recipes</p>
-                <div>
-                    <label for="recipe-name">Recipe Name:</label>
-                    <input type="text" id="recipe-name" placeholder="Add a new recipe">
+<body>
+    <h1>Meal Planner</h1>
+    <p>
+        Welcome to the Meal Planner! Here you can add your favorite recipes,
+        keep track of your ingredient inventory, and plan your meals for the week.
+    </p>
 
-                    <!-- Ingredient card (hidden until user enters recipe name) -->
-                     <div id="ingredient-card" style="display: none;">
-                        <div id="card-content">
-                            <h3>Ingredients</h3> <!-- At some point, would say Ingredients for {recipe name} -->
-                            <label for="ingredient-name">Ingredient Name:</label>
-                            <input type="text" id="ingredient-name" placeholder="Add an ingredient">
-                            <ul id="ingredient-list">
-                                <!-- This will be populated with ingredients -->
-                            </ul>
-                            <button id="save-recipe">Save Recipe</button>
-                        </div>
+    <div id="recipes-and-inventory">
+        <div id="recipes">
+            <h2>Recipes</h2>
+            <p>Add and view your favorite recipes</p>
+            <div>
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" placeholder="Add a new recipe">
+
+                <!-- Ingredient card (hidden until user enters recipe name) -->
+                <div id="ingredient-card" class="hidden">
+                    <div id="card-content">
+                        <h3>Ingredients</h3> <!-- At some point, would say Ingredients for {recipe name} -->
+                        <label for="ingredient-name">Ingredient Name:</label>
+                        <input type="text" id="ingredient-name" placeholder="Add an ingredient">
+                        <ul id="ingredient-list">
+                            <!-- This will be populated with ingredients -->
+                        </ul>
+                        <button id="save-recipe">Save Recipe</button>
                     </div>
-                    <h3>Recipe List</h3>
-                    <ul id="recipe-list"></ul>
-                    
                 </div>
-            </div>
+                <h3>Recipe List</h3>
+                <ul id="recipe-list"></ul>
 
-            <div id="inventory">
-                <h2>Inventory</h2>
-                <p>What do you have on hand?</p>
-                <div>
-                    <input type="text" id="ingredient-name" placeholder="Add a new ingredient">
-                    <h3>Inventory</h3>
-                    <ul id="ingredient-list"></ul>
-                </div>
             </div>
         </div>
-    </body>
+
+        <div id="inventory">
+            <h2>Inventory</h2>
+            <p>What do you have on hand?</p>
+            <div>
+                <input type="text" id="inventory-item" placeholder="Add a new ingredient">
+                <h3>Inventory</h3>
+                <ul id="inventory-list"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

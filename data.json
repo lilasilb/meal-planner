@@ -1,0 +1,42 @@
+{
+  "recipes": [
+    {
+      "name": "banana",
+      "ingredients": [
+        "yellow",
+        "potassium",
+        "peel"
+      ]
+    },
+    {
+      "name": "sushi bowl",
+      "ingredients": [
+        "sushi",
+        "bowl"
+      ]
+    }
+  ],
+  "inventory": [
+    {
+      "name": "lettuce"
+    },
+    {
+      "name": "tomato"
+    },
+    {
+      "name": "bread"
+    },
+    {
+      "name": "Mayo"
+    },
+    {
+      "name": "Cheese"
+    },
+    {
+      "name": "Meat"
+    },
+    {
+      "name": "Lettuce"
+    }
+  ]
+}

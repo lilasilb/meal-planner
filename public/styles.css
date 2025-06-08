@@ -21,7 +21,7 @@ h1 {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.5);
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -39,6 +39,9 @@ h1 {
     display: none;
 }
 
+.active {
+    display: flex;
+}
 /* 
 light green: 606C38
 dark green: 283618 

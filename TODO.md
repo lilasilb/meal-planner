@@ -1,8 +1,12 @@
 # TODO
+Add focus when recipe card pops up
 
+# TODO 
+Better rendering for recipes, display ingredients along with recipe names
 Recipes will be saved on the server.
 
 DONE: When the server starts up: read the file of recipes from disk and load them into memory.
+DONE: When the page is loaded, the file of recipes is loaded into the recipe list on the page.
 
 ## Recipes API:
 

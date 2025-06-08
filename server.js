@@ -3,9 +3,11 @@ const fs = require('node:fs');
 const express = require('express');
 const app = express();
 
-function loadRecipes() {
+const filename = 'data.json';
+
+function loadData() {
   try {
-    var data = fs.readFileSync('recipes.json', 'utf8');
+    var data = fs.readFileSync(filename, 'utf8');
   } catch (err) {
     console.error(err);
     return;
@@ -13,7 +15,17 @@ function loadRecipes() {
   return JSON.parse(data);
 }
 
-var recipes = loadRecipes();
+function saveData() {
+  var toSave = {}
+  toSave.recipes = recipes;
+  toSave.inventory = inventory;
+  fs.writeFileSync(filename, JSON.stringify(toSave, null, 2));
+}
+
+var database = loadData();
+var recipes = database.recipes || [];
+var inventory = database.inventory || [];
+
 console.log(recipes)
 
 function filterRecipes(filter) {
@@ -26,6 +38,22 @@ function filterRecipes(filter) {
   return filteredRecipes;
 }
 
+app.get('/inventory', (req, res) => {
+    res.json(inventory);
+  });
+
+app.post('/inventory', express.json(), (req, res) => {
+  const newInventoryItem = req.body;
+  console.log('Received new recipe:', newInventoryItem);
+
+  // Add the new recipe to the recipes array
+  inventory.push(newInventoryItem);
+
+  // Save the updated recipes back to the JSON file
+  saveData();
+  res.status(201).json({ message: 'Recipe saved successfully' });
+});
+
 app.get('/recipes', (req, res) => {
   console.log("Query filter: " + req.query.filter);
   if (req.query.filter) {
@@ -36,7 +64,17 @@ app.get('/recipes', (req, res) => {
   }
 });
 
+app.post('/recipe', express.json(), (req, res) => {
+  const newRecipe = req.body;
+  console.log('Received new recipe:', newRecipe);
 
+  // Add the new recipe to the recipes array
+  recipes.push(newRecipe);
+
+  // Save the updated recipes back to the JSON file
+  saveData();
+  res.status(201).json({ message: 'Recipe saved successfully' });
+});
 
 // Listen on a port
 const PORT = 3000;
